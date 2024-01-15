@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build: 
+      context: .
+      target: ${STAGE}
+      dockerfile: Dockerfile
+    image: cydonian077/prueba:2.0
+    container_name: nest-prueba
+    ports:
+      - ${PORT}:${PORT}
+    environment:
+      APP_VERSION: ${APP_VERSION}
